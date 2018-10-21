@@ -23,6 +23,10 @@ namespace Infraestructura.Context
         public  String spreadsheetId = "1t6dcu3zBTtuofV_BB3Ja3I0ihZ0WyiFpDJfNUXZZC-g";
         public  String range = "Ticket!A2:I";
 
+
+       /// <summary>
+       /// Constructor of a simulated context using google. Creates services with saved credentials to use googlespreadsheet as DataBase.
+       /// </summary>
         public GoogleContext()
         {
             GoogleCredential credential;
@@ -30,16 +34,12 @@ namespace Infraestructura.Context
             var credFile = Resources.DBTengoFree_231c58ffa8af;
 
            
-            //using (var stream =
-            //  new FileStream("Certificados/DBTengoFree-231c58ffa8af.json", FileMode.Open, FileAccess.Read))
-            //{
-            
+          
 
                 string credPath = "token.json";
                 credential = GoogleCredential.FromStream(new MemoryStream(credFile)).CreateScoped(Scopes);
               
 
-            //}
 
             // Create Google Sheets API service.
 
@@ -48,8 +48,7 @@ namespace Infraestructura.Context
                 HttpClientInitializer=credential,
                 ApplicationName = ApplicationName,
             });
-            
-            // Define request parameters.
+
            
          
         }

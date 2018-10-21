@@ -10,6 +10,11 @@ namespace TengoFree.FormFunctions
 {
     public class FormHelpers
     {
+
+        /// <summary>
+        /// Clean all controls. if control has controls inside call the same metoth again.
+        /// </summary>
+        /// <param name="obj"> object where to search controls to clean</param>
         public static void LimpiarControles(object obj)
         {
             if (obj is Form)

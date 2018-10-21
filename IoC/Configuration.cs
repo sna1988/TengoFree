@@ -16,7 +16,9 @@ namespace IoC
 {
     public  class Configuration: NinjectModule
     {
-
+        /// <summary>
+        /// Configure Dependencys
+        /// </summary>
         public override void Load()
         {
             Bind<IEmailServices>().To<EmailServices>();

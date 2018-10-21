@@ -8,8 +8,13 @@ namespace TengoFree
 {
     public static class EnumInitialization
     {
+        /// <summary>
+        /// Create a list of values to be inserted in a combobox from ticketArea enum
+        /// </summary>
+        /// <returns>List<ComboBoxEnum> to be inserted in combobox</ComboBoxEnum></ComboBoxValue></returns>
         public static List<ComboBoxEnum> AreaInitialization()
         {
+            
             return new List<ComboBoxEnum>(
                new[]
                {
@@ -21,6 +26,10 @@ namespace TengoFree
         }
     }
 
+
+    /// <summary>
+    /// Helper class to format enums to be displayed on combobox
+    /// </summary>
     public  class ComboBoxEnum
     {
         public int EnumValue { get; set; }

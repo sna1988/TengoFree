@@ -21,7 +21,7 @@ namespace TengoFree
         {
             try
             {
-
+                // Initialize Ioc.
                 Composition.Initialize(new IoC.Configuration());
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

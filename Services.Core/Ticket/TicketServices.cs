@@ -23,8 +23,19 @@ namespace Services.Core.Ticket
             _uow = uow;
         }
 
+        /// <summary>
+        /// Insert a new Ticket into Db.
+        /// </summary>
+        /// <param name="name">Person Name</param>
+        /// <param name="lastName">Person Lastname</param>
+        /// <param name="area">Ticket Area</param>
+        /// <param name="telephone">Person telephone number</param>
+        /// <param name="email">Person email where to send Mail</param>
+        /// <param name="description">Ticket Description</param>
+        /// <returns> Ticket created with creation datetime and ticket Guid Id</returns>
         public TicketCreateDto Create(string name, string lastName, TicketArea area, string telephone, string email, string description)
         {
+            // Creates new Ticket entity
             var ticket = new Domain.Core.Ticket()
             {
                 Name = name,
@@ -37,8 +48,11 @@ namespace Services.Core.Ticket
                 CreationDate = DateTime.Now,
                 Number = CreateTicketNumber()
             };
+            
+            // save entity into DB
             _ticketRepository.Add(ticket);
             
+            // creates new TicketCreateDto to return
             return new TicketCreateDto()
             {
                 Area = ticket.Area,
@@ -53,17 +67,28 @@ namespace Services.Core.Ticket
 
 
         }
-
+        /// <summary>
+        /// Crfeates a new Random number for ticket of 5 digits.
+        /// </summary>
+        /// <returns>Random number of 5 digits</returns>
         public int CreateTicketNumber()
         {
             var random = new Random().Next(10000, 99999);
             return random;
         }
 
+        /// <summary>
+        /// Gets ticket By Id.
+        /// </summary>
+        /// <param name="id">Ticket Guid Id</param>
+        /// <returns>Ticket Dto with the tickets values</returns>
         public TicketDto GetTicketById(Guid id)
         {
 
+            // retrieve ticket entity
             var ticket = _ticketRepository.GetById(id);
+
+            // convert ticket entity to ticket Dto;
             return new TicketDto()
             {
                 Id = ticket.Id,
@@ -78,8 +103,14 @@ namespace Services.Core.Ticket
             };
         }
 
+
+        /// <summary>
+        /// Retrieve all tickets in the DB
+        /// </summary>
+        /// <returns>List of TicketListDto ordered by date descending</returns>
         public IEnumerable<TicketListDto> GetTickets()
         {
+
             return _ticketRepository.GetAll().Select(s => new TicketListDto()
             {
                 Id = s.Id,
