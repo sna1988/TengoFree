@@ -33,6 +33,10 @@ namespace Infrastructure
                 this._context = context;
         }
 
+        /// <summary>
+        /// Add a new entity to the DB
+        /// </summary>
+        /// <param name="entity">object to be inserted</param>
         public void Add(T entity)
         {
             try
@@ -40,8 +44,10 @@ namespace Infrastructure
                 if (entity == null)
                     throw new ArgumentNullException($"La entidad {nameof(entity)} no puede ser null");
 
-
+                // get properties of entity.
                 var array = entity.GetType().GetProperties().Select(s => s.GetValue(entity)).ToList();
+
+                // list of rows to be inserted in GoogleSheet
                 var rangeValue = new List<IList<object>>() { array };
                 var valueRange = new ValueRange()
                 {
@@ -49,10 +55,16 @@ namespace Infrastructure
                     MajorDimension = "ROWS",
                     Values = rangeValue,
                 };
+
+                //Create request to insert row.
                var request= _googleContext.Service.Spreadsheets.Values.Append(valueRange, _googleContext.spreadsheetId, _googleContext.range);
                 request.InsertDataOption = SpreadsheetsResource.ValuesResource.AppendRequest.InsertDataOptionEnum.INSERTROWS;
                 request.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.RAW;
+
+                // execute insert request.
                 var response=request.Execute();
+
+                // check how many rows have been inserted if equals 0 no rows have been inserted.
                 if (response.Updates.UpdatedRows == 0)
                     throw new Exception("No se realizó ninguna edición en la base de datos.");
                 
@@ -65,33 +77,53 @@ namespace Infrastructure
             }
         }
 
-    
+    /// <summary>
+    ///  get all Entities in DB.
+    /// </summary>
+    /// <param name="includeProperties">Properties to be included (used when connect to sql server.)</param>
+    /// <returns></returns>
         public IEnumerable<T> GetAll(string includeProperties = null)
         {
             try
             {
+                // request to get Tickets
                 var request = _googleContext.Service.Spreadsheets.Values.Get(_googleContext.spreadsheetId, _googleContext.range);
                 request.ValueRenderOption = SpreadsheetsResource.ValuesResource.GetRequest.ValueRenderOptionEnum.FORMATTEDVALUE;
+
+                // execute request.
                 var response = request.Execute();
+
                 var list = new List<T>();
+
+                //iterate throw values retrieved and set values of cell to property in entity object throught reflection.
                 foreach (var row in response.Values)
                 {
+                    // activates a new instance of type entity.
                     var instance = ((T)Activator.CreateInstance(typeof(T)));
+
+                    // iterates througth cell in a row retrieved
                     for (int i = 0; i < ((List<object>)row).Count; i++)
                     {
-                        TypeConverter typeConverter = TypeDescriptor.GetConverter(instance.GetType().GetProperties()[i]);
+
+
+                        // get cell retrieved value.
                         var value = row[i].ToString();
+
+                        // if entity property it's type of TicketArea it has a especial cast.
                         if (instance.GetType().GetProperties()[i].PropertyType == typeof(TicketArea))
                         {
                             var formatedValue = Convert.ChangeType(value, typeof(int));
                             var enumValue = (TicketArea)formatedValue;
                             instance.GetType().GetProperty(instance.GetType().GetProperties()[i].Name).SetValue(instance, enumValue);
                         }
+
+                        // if entity property it's type of guid has a special cast
                         else if (instance.GetType().GetProperties()[i].PropertyType == typeof(Guid?))
                         {
                             var formatedValue = new Guid(value);
                             instance.GetType().GetProperty(instance.GetType().GetProperties()[i].Name).SetValue(instance, formatedValue);
                         }
+                       
                         else
                         {
 
@@ -99,7 +131,7 @@ namespace Infrastructure
                             instance.GetType().GetProperty(instance.GetType().GetProperties()[i].Name).SetValue(instance, formatedValue);
                         }
                     }
-
+                    // add object to list of objects to retrieve.
                     list.Add(instance);
                 }
                 return list;

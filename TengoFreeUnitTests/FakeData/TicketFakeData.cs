@@ -12,7 +12,9 @@ namespace TengoFreeUnitTests.FakeData
 {
    public static class TicketFakeData
     {
-
+        /// <summary>
+        /// Fakes a List of 100 ticket entities
+        /// </summary>
         public static List<Ticket> Tickets => new Faker<Ticket>().StrictMode(true)
                                                           .RuleFor(x => x.Area, f => f.PickRandom<TicketArea>())
                                                           .RuleFor(x => x.Id, f => Guid.NewGuid())
