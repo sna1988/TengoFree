@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dbtengofree",
+  "private_key_id": "02918a43e7432fcb23784af8cc6c63ad4984674c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDrzqef71O1YqBj\nYZRWlc+JnzTWs9wp4f8nOsumJVm5BTeCUGJhF1Ob1T/h4NjIFvOLf6lCP1TDRWo8\nQiBYMM3mdHrJdWgq0MQPxu9v8jUFjigj29rnj9HMFSD9OXuiSo+gVsqk5uk9qsdB\n0ZLnzC0zAWymfgsboZIxR86PZ2B/Lqi1BXmbLerlOGpleVSuAgPaR2s4/gluUW65\nxmwbYduXUWOwUsgJhjBZzxR/2WPc5RxfqRVAEYV/0HVcmclcW6ZoHk19U0pOB7AA\nnitZsifgWisqWvDvk12cf+QZHGcAA10tzD8xqjg43xO8fG/NVrZYs+uW/CQU+ZME\nuTHNjZy5AgMBAAECggEAAtsJkIg2+nKzkDu81P1mJw7aKbVBywsNPZ+HZ4XUki16\ncg+A2LEOE0xjKrXZm9C1VqDifwAiPP9XJw9cJQOp43ed8T8eY0UmC3sRNSKY53r3\n4ix8XrYETr7WjuJ8xg1Pmg8Hz+fqkEaqnsT7ABrq1QJYW1eaHe9LhGFcr11lEun+\nIug1ySEfXJFQkmm8Hsc14DY4vhOaFGdEKwS+kwIz4vGcfmd/ydG9oNllaqewRbno\nQASe7E511jd/tiGBefHEpsxsIhV4U/ruzhQ+OGLd4uZdDV+4sYQBK+q/roq68U9Z\nuBp+Nlr86jw/+0QznZyKZqhan6jX7vkskNrb/9J2FQKBgQD51Vwg2Xseeim7E7AP\nmD0MJI5mXMitmAMhOwSIM4MxCdzDjWXk7+7RLkZMO3So0/MYFxunzI8FUB8kuFib\nq2vwGhpQbR45G8q0A+X/jtw1Dg555dxMi0Dfwk1uFfSglPOhB/AOqccW1egn8Y7N\nCETX1ZpeEzWYqGwpz32pXlzV9QKBgQDxoKqnyYzWCJ6dWAqso4p4Ute5sCYE22dT\nlI711tBUen1e9UTqi48AiLrvcRUhSCQ7HEpanvrqJ538CmNFUZK8REhccT+gjt/A\nxwOFeIXE1cumxbRoSXQfZlOvYffU2x8D0cwGMf1EcP24vgPh03x4qgwfyp7S1V2s\n764vhsxtNQKBgQDH6AmH3328rVOm9eHzGIYAqV+oWKXbAb+/X1IJCe731kRn1USr\nI7Gcf8KQTSLT1IS3ygW/BteKEMpav4dnSItd3AUiRa3hVHOmB1iKXO2nJlA/CcZ1\nGRgX84mxhK/xrj4jpA5aLU+43gCdtZPmS6+KZMjYbdZ9CIdEDVsnovH14QKBgEs6\nLmeWxJZOkLOEGa6uLApSIH/ba7rPZFgNRIUdoDbs++N4kUBEuvz7lNe/aUi3YTBW\nGoAkRxJnyzQRN975Cqo6yByf1aNzWA5454vCfkNOHN2LaCOf2tt7zEoqQjKvFfTm\neJLlNWj9lMDTx/mjEnmu159+Qfx6GXQiGyUI3tSRAoGBANSsK9/OYVyty6ESVdJd\nbjPo6DucwqOF0ZoG6EG6dN9A2z4iuW0ER4lpi87QqVJTdIP4Yex4ST4aOBMw7ygF\nVgJohmHnBCYMgbir59Dbk6wh89rF+BfCDnTS8eeiFODNXk7WNN8rMK7v+u2sGgzZ\nTepafMZwmc2eYYw3kZIazQ32\n-----END PRIVATE KEY-----\n",
+  "client_email": "testing@dbtengofree.iam.gserviceaccount.com",
+  "client_id": "104459817407270964399",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/testing%40dbtengofree.iam.gserviceaccount.com"
+}
