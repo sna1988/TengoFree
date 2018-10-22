@@ -51,7 +51,7 @@ namespace Services.Core.Email
                 MailMessage message = new MailMessage("sna1988@gmail.com", dto.Email, "TengoFree - Ticket N°: " + dto.Number, dto.Description);
 
                 message.From = new MailAddress("sna1988@gmail.com");
-                message.Bcc.Add(new MailAddress("silcultura@gmail.com"));
+                message.Bcc.Add(new MailAddress("tengofree@gmail.com"));
                 message.To.Add(new MailAddress(dto.Email));
                 message.Subject = "TengoFree - Ticket N°: " + dto.Number;
                 message.Body = html;
