@@ -41,6 +41,11 @@
             this.btnEnviar = new MetroFramework.Controls.MetroButton();
             this.cmbArea = new MetroFramework.Controls.MetroComboBox();
             this.lblArea = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // lblName
@@ -283,17 +288,72 @@
             // 
             this.lblArea.AutoSize = true;
             this.lblArea.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblArea.Location = new System.Drawing.Point(57, 161);
+            this.lblArea.Location = new System.Drawing.Point(61, 158);
             this.lblArea.Name = "lblArea";
             this.lblArea.Size = new System.Drawing.Size(40, 19);
             this.lblArea.TabIndex = 13;
             this.lblArea.Text = "Area:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(299, 76);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(15, 19);
+            this.metroLabel2.TabIndex = 14;
+            this.metroLabel2.Text = "*";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(299, 117);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(15, 19);
+            this.metroLabel3.TabIndex = 15;
+            this.metroLabel3.Text = "*";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(299, 158);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(15, 19);
+            this.metroLabel4.TabIndex = 16;
+            this.metroLabel4.Text = "*";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(598, 76);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(15, 19);
+            this.metroLabel5.TabIndex = 17;
+            this.metroLabel5.Text = "*";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.Location = new System.Drawing.Point(598, 117);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(15, 19);
+            this.metroLabel6.TabIndex = 18;
+            this.metroLabel6.Text = "*";
             // 
             // _00002_NuevoTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 490);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.lblArea);
             this.Controls.Add(this.cmbArea);
             this.Controls.Add(this.btnEnviar);
@@ -332,5 +392,10 @@
         private MetroFramework.Controls.MetroButton btnEnviar;
         private MetroFramework.Controls.MetroComboBox cmbArea;
         private MetroFramework.Controls.MetroLabel lblArea;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }
