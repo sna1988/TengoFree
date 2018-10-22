@@ -1,16 +1,9 @@
 ﻿using Aplication.Enums;
+using Aplication.Interfaces.Email;
+using Aplication.Interfaces.Ticket;
 using MetroFramework;
 using MetroFramework.Forms;
-using Services.Core.Email;
-using Services.Core.Ticket;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TengoFree.FormFunctions;
 
@@ -26,9 +19,9 @@ namespace TengoFree
             InitializeComponent();
             _ticketServices = Composition.Resolve<ITicketServices>();
             _emailServices = Composition.Resolve<IEmailServices>();
-           
-            
-            errorProvider= new ErrorProvider();
+
+            LoadComboBox();
+            errorProvider = new ErrorProvider();
         }
 
         /// <summary>

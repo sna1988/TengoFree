@@ -1,4 +1,7 @@
-﻿using Autofac;
+﻿using Aplication.Interfaces.Email;
+using Aplication.Interfaces.Ticket;
+using Autofac;
+using AutoMapper;
 using Domain.Base.Repository;
 using Domain.Base.UnitOfWork;
 using Infrastructure;
@@ -21,6 +24,7 @@ namespace IoC
         /// </summary>
         public override void Load()
         {
+            Bind<IMapper>().ToMethod(AutoMapperModule.AutoMapper).InSingletonScope();
             Bind<IEmailServices>().To<EmailServices>();
             Bind<ITicketServices>().To<TicketServices>();
             Bind<IUnitOfWork>().To<UnitOfWork>();

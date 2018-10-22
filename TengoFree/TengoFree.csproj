@@ -191,6 +191,14 @@
       <Project>{c5cbf911-deb1-4305-92b4-0ba67bb098aa}</Project>
       <Name>Aplication.Enums</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Application.Interfaces\Aplication.Interfaces.csproj">
+      <Project>{EBE239CB-6869-4A23-B3DA-9AACF17A31C8}</Project>
+      <Name>Aplication.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj">
+      <Project>{6e4f5b1e-b60b-41b5-9862-5e74d5371b55}</Project>
+      <Name>DataTransferObjects</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IoC\IoC.csproj">
       <Project>{f31b2fbe-cb93-4447-bdfe-b9e49214ecf5}</Project>
       <Name>IoC</Name>

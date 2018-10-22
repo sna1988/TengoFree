@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -83,23 +86,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Email\EmailServices.cs" />
-    <Compile Include="Email\IEmailServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Ticket\DTOs\TicketCreateDto.cs" />
-    <Compile Include="Ticket\DTOs\TicketDto.cs" />
-    <Compile Include="Ticket\DTOs\TicketListDto.cs" />
-    <Compile Include="Ticket\ITicketServices.cs" />
     <Compile Include="Ticket\TicketServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aplication.Enums\Aplication.Enums.csproj">
       <Project>{c5cbf911-deb1-4305-92b4-0ba67bb098aa}</Project>
       <Name>Aplication.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.Interfaces\Aplication.Interfaces.csproj">
+      <Project>{EBE239CB-6869-4A23-B3DA-9AACF17A31C8}</Project>
+      <Name>Aplication.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj">
+      <Project>{6e4f5b1e-b60b-41b5-9862-5e74d5371b55}</Project>
+      <Name>DataTransferObjects</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
       <Project>{fa1fa537-b5f4-41a8-87f1-82db3a56f2ec}</Project>

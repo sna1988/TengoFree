@@ -40,8 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Email\IEmailServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket\ITicketServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aplication.Enums\Aplication.Enums.csproj">
+      <Project>{c5cbf911-deb1-4305-92b4-0ba67bb098aa}</Project>
+      <Name>Aplication.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj">
+      <Project>{6e4f5b1e-b60b-41b5-9862-5e74d5371b55}</Project>
+      <Name>DataTransferObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Net;
 using System.Net.Mail;
-using System.Net.Mime;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using Aplication.Interfaces.Email;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
@@ -16,7 +10,6 @@ using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using Nustache.Core;
 using Services.Core.Properties;
-using Services.Core.Ticket.DTOs;
 
 namespace Services.Core.Email
 {
@@ -46,7 +39,7 @@ namespace Services.Core.Email
         /// <param name="dto">Ticket with the information to be sent</param>
         /// <returns></returns>
 
-        public MailMessage CreateMail(TicketCreateDto dto)
+        public MailMessage CreateMail(DataTransferObjects.Ticket.TicketCreateDto dto)
         {
             try
             {
@@ -78,7 +71,7 @@ namespace Services.Core.Email
         /// Send Mails From Google Account
         /// </summary>
         /// <param name="dto">Created Ticket (Saved on Db)</param>
-        public void SendMail(TicketCreateDto dto)
+        public void SendMail(DataTransferObjects.Ticket.TicketCreateDto dto)
         {
 
             try

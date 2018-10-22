@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Bogus, Version=24.3.0.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
       <HintPath>..\packages\Bogus.24.3.0\lib\net40\Bogus.dll</HintPath>
     </Reference>
@@ -90,6 +93,10 @@
     <ProjectReference Include="..\Application.Interfaces\Aplication.Interfaces.csproj">
       <Project>{ebe239cb-6869-4a23-b3da-9aacf17a31c8}</Project>
       <Name>Aplication.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTransferObjects\DataTransferObjects.csproj">
+      <Project>{6e4f5b1e-b60b-41b5-9862-5e74d5371b55}</Project>
+      <Name>DataTransferObjects</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
       <Project>{fa1fa537-b5f4-41a8-87f1-82db3a56f2ec}</Project>

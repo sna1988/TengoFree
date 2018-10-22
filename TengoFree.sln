@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplication.Enums", "Aplicat
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TengoFreeTicket", "TengoFreeTicket\TengoFreeTicket.vdproj", "{28047474-4175-4B37-93CB-68C4EB8987BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransferObjects", "DataTransferObjects\DataTransferObjects.csproj", "{6E4F5B1E-B60B-41B5-9862-5E74D5371B55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{C5CBF911-DEB1-4305-92B4-0BA67BB098AA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28047474-4175-4B37-93CB-68C4EB8987BA}.Debug|Any CPU.ActiveCfg = Debug
 		{28047474-4175-4B37-93CB-68C4EB8987BA}.Release|Any CPU.ActiveCfg = Release
+		{6E4F5B1E-B60B-41B5-9862-5E74D5371B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4F5B1E-B60B-41B5-9862-5E74D5371B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4F5B1E-B60B-41B5-9862-5E74D5371B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4F5B1E-B60B-41B5-9862-5E74D5371B55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{8E4FAFC2-776E-421C-BA46-B3B45160D848} = {B8B02220-4D98-4D67-82D1-8C526B02BDF0}
 		{F31B2FBE-CB93-4447-BDFE-B9E49214ECF5} = {47829AFC-3D4B-46C5-B19B-4BFCA2FA964E}
 		{C5CBF911-DEB1-4305-92B4-0BA67BB098AA} = {47829AFC-3D4B-46C5-B19B-4BFCA2FA964E}
+		{6E4F5B1E-B60B-41B5-9862-5E74D5371B55} = {47829AFC-3D4B-46C5-B19B-4BFCA2FA964E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E00C4797-044A-49C2-B8D4-1F002D0352A2}

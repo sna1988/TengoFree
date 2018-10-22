@@ -95,44 +95,47 @@ namespace Infrastructure
 
                 var list = new List<T>();
 
-                //iterate throw values retrieved and set values of cell to property in entity object throught reflection.
-                foreach (var row in response.Values)
+                if (response.Values!=null)
                 {
-                    // activates a new instance of type entity.
-                    var instance = ((T)Activator.CreateInstance(typeof(T)));
-
-                    // iterates througth cell in a row retrieved
-                    for (int i = 0; i < ((List<object>)row).Count; i++)
+                    //iterate throw values retrieved and set values of cell to property in entity object throught reflection.
+                    foreach (var row in response.Values)
                     {
+                        // activates a new instance of type entity.
+                        var instance = ((T)Activator.CreateInstance(typeof(T)));
 
-
-                        // get cell retrieved value.
-                        var value = row[i].ToString();
-
-                        // if entity property it's type of TicketArea it has a especial cast.
-                        if (instance.GetType().GetProperties()[i].PropertyType == typeof(TicketArea))
-                        {
-                            var formatedValue = Convert.ChangeType(value, typeof(int));
-                            var enumValue = (TicketArea)formatedValue;
-                            instance.GetType().GetProperty(instance.GetType().GetProperties()[i].Name).SetValue(instance, enumValue);
-                        }
-
-                        // if entity property it's type of guid has a special cast
-                        else if (instance.GetType().GetProperties()[i].PropertyType == typeof(Guid?))
-                        {
-                            var formatedValue = new Guid(value);
-                            instance.GetType().GetProperty(instance.GetType().GetProperties()[i].Name).SetValue(instance, formatedValue);
-                        }
-                       
-                        else
+                        // iterates througth cell in a row retrieved
+                        for (int i = 0; i < ((List<object>)row).Count; i++)
                         {
 
-                            var formatedValue = Convert.ChangeType(value, instance.GetType().GetProperties()[i].PropertyType);
-                            instance.GetType().GetProperty(instance.GetType().GetProperties()[i].Name).SetValue(instance, formatedValue);
+
+                            // get cell retrieved value.
+                            var value = row[i].ToString();
+
+                            // if entity property it's type of TicketArea it has a especial cast.
+                            if (instance.GetType().GetProperties()[i].PropertyType == typeof(TicketArea))
+                            {
+                                var formatedValue = Convert.ChangeType(value, typeof(int));
+                                var enumValue = (TicketArea)formatedValue;
+                                instance.GetType().GetProperty(instance.GetType().GetProperties()[i].Name).SetValue(instance, enumValue);
+                            }
+
+                            // if entity property it's type of guid has a special cast
+                            else if (instance.GetType().GetProperties()[i].PropertyType == typeof(Guid?))
+                            {
+                                var formatedValue = new Guid(value);
+                                instance.GetType().GetProperty(instance.GetType().GetProperties()[i].Name).SetValue(instance, formatedValue);
+                            }
+
+                            else
+                            {
+
+                                var formatedValue = Convert.ChangeType(value, instance.GetType().GetProperties()[i].PropertyType);
+                                instance.GetType().GetProperty(instance.GetType().GetProperties()[i].Name).SetValue(instance, formatedValue);
+                            }
                         }
-                    }
-                    // add object to list of objects to retrieve.
-                    list.Add(instance);
+                        // add object to list of objects to retrieve.
+                        list.Add(instance);
+                    } 
                 }
                 return list;
             }
